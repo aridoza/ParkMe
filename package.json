@@ -1,0 +1,25 @@
+{
+  "name": "ParkMe",
+  "description": "A community based parking app to help drivers find street parking",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aridoza/ParkMe.git"
+  },
+  "author": "Ariel Mendoza",
+  "homepage": "https://github.com/aridoza/ParkMe",
+  "dependencies": {
+    "express": "^4.13.4",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "react-bootstrap": "^0.30.2",
+    "react-router": "^2.0.1",
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "mongodb": "^2.0.43"
+  }
+}
