@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const path = require("path");
 const ObjectID = mongodb.ObjectID;
 
-const SPOTS_COLLECTION = "parking-spaces";
+const SPACES_COLLECTION = "spaces";
 
 const app = express();
 app.use(express.static(__dirname + "/public"));
@@ -35,8 +35,8 @@ function handleError(res, reason, message, code) {
 
 // All DB Routes :
 
-app.get("/parking-spaces", function(req, res) {
-  db.collection(SPOTS_COLLECTION).find({}).toArray(function(err, docs) {
+app.get("/spaces", function(req, res) {
+  db.collection(SPACES_COLLECTION).find({}).toArray(function(err, docs) {
     if(err) {
       handleError(res, err.message, "Failed to get contacts");
     } else {
@@ -45,7 +45,7 @@ app.get("/parking-spaces", function(req, res) {
   });
 });
 
-app.post("/parking-spaces", function(req, res) {
+app.post("/spaces", function(req, res) {
   const newSpace = req.body;
   newSpace.createDate = new Date();
 
@@ -53,7 +53,7 @@ app.post("/parking-spaces", function(req, res) {
     handleError(res, "Unable to process, please try again", 400);
   }
 
-  db.collection(SPOTS_COLLECTION).insertOne(newSpace, function(err, doc) {
+  db.collection(SPACES_COLLECTION).insertOne(newSpace, function(err, doc) {
     if(err){
       handleError(res, err.message, "Failed to create new space");
     } else {
