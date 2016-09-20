@@ -33,7 +33,7 @@ function handleError(res, reason, message, code) {
 }
 
 
-// DB Routes:
+// All DB Routes :
 
 app.get("/parking-spaces", function(req, res) {
   db.collection(SPOTS_COLLECTION).find({}).toArray(function(err, docs) {
