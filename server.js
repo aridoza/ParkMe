@@ -1,16 +1,16 @@
-const express = require('express');
-const mongodb = require('mongodb');
-const bodyParser = require('body-parser');
-const path = require("path");
-const ObjectID = mongodb.ObjectID;
+var express = require('express');
+var mongodb = require('mongodb');
+var bodyParser = require('body-parser');
+var path = require("path");
+var ObjectID = mongodb.ObjectID;
 
-const SPACES_COLLECTION = "spaces";
+var SPACES_COLLECTION = "spaces";
 
-const app = express();
+var app = express();
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 
-const db;
+var db;
 
 mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
   if(err){
@@ -21,8 +21,8 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
   db = database;
   console.log("Database connection ready");
 
-  const server = app.listen(process.env.PORT || 8080, function () {
-    const port = server.address().port;
+  var server = app.listen(process.env.PORT || 8080, function () {
+    var port = server.address().port;
     console.log("App now running on port", port);
   });
 });
@@ -46,7 +46,7 @@ app.get("/spaces", function(req, res) {
 });
 
 app.post("/spaces", function(req, res) {
-  const newSpace = req.body;
+  var newSpace = req.body;
   newSpace.createDate = new Date();
 
   if (!(req.body.username || req.body.location || req.body.time)) {
