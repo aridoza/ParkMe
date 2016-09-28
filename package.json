@@ -1,10 +1,12 @@
 {
-  "name": "ParkMe",
+  "name": "react-node-starter",
+  "version": "0.2.0",
   "description": "A community based parking app to help drivers find street parking",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "webpack -p --config webpack.prod.config.js"
   },
   "repository": {
     "type": "git",
@@ -13,13 +15,27 @@
   "author": "Ariel Mendoza",
   "homepage": "https://github.com/aridoza/ParkMe",
   "dependencies": {
+    "axios": "^0.9.1",
+    "babel-core": "^6.7.6",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
     "express": "^4.13.4",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-bootstrap": "^0.30.2",
     "react-router": "^2.0.1",
+    "react-parallax": "^0.4.3",
     "body-parser": "^1.13.3",
     "express": "^4.13.3",
-    "mongodb": "^2.0.43"
+    "mongodb": "^2.0.43",
+    "lodash": "^4.8.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.12.14"
+  },
+  "devDependencies": {
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-hot-middleware": "^2.10.0"
   }
 }
