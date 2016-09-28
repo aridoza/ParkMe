@@ -5,5 +5,5 @@ import App from './containers/App';
 
 render(
   <App />,
-  document.getElementById("parkme-app")
+  document.getElementById('parkme-app')
 );
