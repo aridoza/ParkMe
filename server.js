@@ -41,6 +41,7 @@ app.get("/spaces", function(req, res) {
       handleError(res, err.message, "Failed to get contacts");
     } else {
       res.status(200).json(docs);
+      console.log(res.json);
     }
   });
 });
