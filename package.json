@@ -1,6 +1,5 @@
 {
   "name": "ParkMe",
-  "version": "0.2.0",
   "description": "A community based parking app to help drivers find street parking",
   "main": "server.js",
   "scripts": {
